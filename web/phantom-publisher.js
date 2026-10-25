@@ -776,7 +776,21 @@ const publish = async () => {
   }
 };
 
-const PUBLISH_TOOLTIP = 'Publish the executable workflow and exact dependencies to Phantom';
+const PUBLISH_TOOLTIP = 'Phantom Publisher is retired';
+
+// Phantom Router retired workflow publishing on 2026-10-25: its publisher
+// routes are gone, so every publish would fail. The button stays so an
+// installed node tells its user why, instead of failing with a bare 404.
+const RETIRED_MESSAGE =
+  'Phantom Router no longer accepts workflows from ComfyUI, so this node can no ' +
+  'longer publish. Remove it in ComfyUI Manager. Workflows are now set up by the ' +
+  'Phantom team; contact them to publish one.';
+
+const showRetired = () => {
+  const modal = dialog();
+  modal.panel.innerHTML = `<h2>Phantom Publisher is retired</h2><p></p>`;
+  modal.panel.querySelector('p').textContent = RETIRED_MESSAGE;
+};
 
 const addToolbarButton = () => {
   // Current ComfyUI frontends render `actionBarButtons` below. Keep this DOM
@@ -796,7 +810,7 @@ const addToolbarButton = () => {
   button.className = 'comfyui-button phantom-publisher-toolbar';
   button.title = PUBLISH_TOOLTIP;
   button.innerHTML = `<span aria-hidden="true">↥</span><span>Publish to Phantom</span>`;
-  button.onclick = publish;
+  button.onclick = showRetired;
   toolbar.append(button);
   return true;
 };
@@ -813,7 +827,7 @@ app.registerExtension({
       label: 'Publish to Phantom',
       tooltip: PUBLISH_TOOLTIP,
       class: 'phantom-publisher-action',
-      onClick: publish,
+      onClick: showRetired,
     },
   ],
   async setup() {
