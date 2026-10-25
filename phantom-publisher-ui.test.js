@@ -322,3 +322,19 @@ describe('Phantom publisher new workflow slug', () => {
     assert.equal(slugFromName('***'), '');
   });
 });
+
+describe('Phantom publisher retirement', () => {
+  // Phantom Router removed the publisher routes, so a publish can only fail.
+  // Both buttons explain that instead of starting a publish.
+  it('routes both toolbar buttons to the retirement notice', () => {
+    contains(js, 'onClick: showRetired,');
+    contains(js, 'button.onclick = showRetired;');
+    excludes(js, 'onClick: publish,');
+    excludes(js, 'button.onclick = publish;');
+  });
+
+  it('tells the user why and what to do', () => {
+    contains(js, 'Phantom Publisher is retired');
+    matches(js, /Remove it in ComfyUI Manager/);
+  });
+});

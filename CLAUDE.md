@@ -5,6 +5,11 @@ repository.
 
 ## What This Is
 
+> **Retired 2026-10-25.** Phantom Router removed the publisher routes and the
+> GPU Workflows system they fed. 0.15.0 is the last release: its toolbar button
+> only explains the retirement. The repository is archived.
+
+
 The **Phantom Publisher** custom node for ComfyUI. It publishes the exact
 workflow a user is running — graph, custom node packages, models — into
 [Phantom Router](https://phantomrouter.ai), which builds the image and serves

@@ -1,5 +1,11 @@
 # Phantom Publisher for ComfyUI
 
+> **Retired (2026-10-25).** Phantom Router no longer accepts workflows from
+> ComfyUI, and its publisher endpoints are gone. Version 0.15.0 only tells you
+> this when you select the toolbar button. Remove the node in **ComfyUI Manager
+> → Custom Nodes Manager**. Workflows are now set up by the Phantom team. This
+> repository is archived; the text below describes the old behaviour.
+
 Publish the exact workflow you are running — graph, custom nodes, models and
 their versions — from ComfyUI straight into [Phantom Router](https://phantomrouter.ai).
 Phantom builds the image, pins every dependency and serves the workflow as a

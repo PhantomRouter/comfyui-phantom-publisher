@@ -1,7 +1,7 @@
 [project]
 name = "comfyui-phantom-publisher"
-description = "Publish exact ComfyUI workflows and dependencies to Phantom Router"
-version = "0.14.2"
+description = "Retired: Phantom Router no longer accepts workflows from ComfyUI. Remove this node."
+version = "0.15.0"
 license = { file = "LICENSE" }
 readme = "README.md"
 requires-python = ">=3.10"
@@ -13,5 +13,5 @@ Documentation = "https://docs.phantomrouter.ai"
 
 [tool.comfy]
 PublisherId = "phantom"
-DisplayName = "Phantom Publisher"
+DisplayName = "Phantom Publisher (retired)"
 Icon = "https://docs.phantomrouter.ai/img/logo.svg"
